@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Example</title>
+</head>
+<body>
+<div id="output"></div>
+
+<script>
+    // Create a WebSocket connection
+    const socket = new WebSocket('ws://localhost:8080/data');
+
+    // Function to handle messages received from the server
+    socket.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        const outputDiv = document.getElementById('output');
+
+        // Display random number and color
+        outputDiv.innerHTML = `<p style="color: ${data.colour};">${data.number}</p>`;
+    };
+
+    // Function to handle errors
+    socket.onerror = function(error) {
+        console.error('WebSocket error:', error);
+    };
+
+    // Function to handle closing of the connection
+    socket.onclose = function(event) {
+        console.log('WebSocket connection closed:', event);
+    };
+</script>
+</body>
+</html>
