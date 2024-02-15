@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Hello, World!</title>
 </head>
-<body style="color: green;">
-<h1>Hello, World!</h1>
-</body>
+<h1> [[${@environment.getProperty('VERSION')}]] </h1>
+<h1 th:style="'color: '+ ${@environment.getProperty('DATABASE')}"> Database </h1>
+<h1 th:style="'color: '+ ${@environment.getProperty('CACHE')}"> Cache </h1>
+
 </html>
