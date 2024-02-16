@@ -8,11 +8,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ApplicationController {
 
-    @GetMapping("/static")
+    @GetMapping("/properties")
     public String applicationStatic() {
-        log.info("Calling static page");
-        return "application";
+        log.info("Calling properties page");
+        return "properties";
     }
+
+    @GetMapping("/basic")
+    public String applicationBasic() {
+        log.info("Calling basic page");
+        return "basic";
+    }
+
 
     @GetMapping("/realtime")
     public String applicationWebSocket() {
