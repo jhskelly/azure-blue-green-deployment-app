@@ -6,6 +6,15 @@
 </head>
 <h1> [[${@environment.getProperty('VERSION')}]] </h1>
 <h1 th:style="'color: '+ ${@environment.getProperty('DATABASE')}"> Database </h1>
-<h1 th:style="'color: '+ ${@environment.getProperty('CACHE')}"> Cache </h1>
+
+<!--In Memory icons-->
+<div th:if="${@environment.getProperty('RESOURCES')} == 'InMemory'">
+    <h2>In Memory</h2>
+</div>
+
+<!--Production-->
+<div th:if="${@environment.getProperty('RESOURCES')} == 'Production'">
+    <h2>Production</h2>
+</div>
 
 </html>
