@@ -9,12 +9,14 @@
 
 <!--In Memory icons-->
 <div th:if="${@environment.getProperty('RESOURCES')} == 'InMemory'">
-    <h2>In Memory</h2>
+    <img th:src="@{images/staging-sqlite.jpg}" width="200" height="250" alt="Sqlite"/>
+    <img th:src="@{images/staging-kafka.jpg}" width="270" height="250" alt="Kafka"/>
 </div>
 
 <!--Production-->
 <div th:if="${@environment.getProperty('RESOURCES')} == 'Production'">
-    <h2>Production</h2>
+    <img th:src="@{images/production-database.jpg}" width="200" height="220" alt="Azure SQL"/>
+    <img th:src="@{images/production-eventhub.jpg}" width="200" height="250" alt="EventHub"/>
 </div>
 
 </html>
