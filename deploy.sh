@@ -4,11 +4,11 @@
 . ./config.sh
 
 # Set the config for the application
-az webapp config appsettings set -g "$rg" -n "$app_basic" --settings  VERSION="Version1"
-az webapp config appsettings set -g "$rg" -n "$app_basic" --slot staging --settings  VERSION="Version2"
+az webapp config appsettings set -g "$rg" -n "$app_basic" --settings  VERSION="Chicago"
+az webapp config appsettings set -g "$rg" -n "$app_basic" --slot staging --settings  VERSION="Detroit"
 
-az webapp config appsettings set -g "$rg" -n "$app_properties" --slot-settings  DATABASE="blue" --settings VERSION="Version1" RESOURCES="InMemory"
-az webapp config appsettings set -g "$rg" -n "$app_properties" --slot staging --slot-settings DATABASE="green" --settings VERSION="Version2" RESOURCES="Production"
+az webapp config appsettings set -g "$rg" -n "$app_properties" --slot-settings  DATABASE="blue" --settings VERSION="Chicago" RESOURCES="InMemory"
+az webapp config appsettings set -g "$rg" -n "$app_properties" --slot staging --slot-settings DATABASE="green" --settings VERSION="Detroit" RESOURCES="Production"
 
 
 # Deploy the application
