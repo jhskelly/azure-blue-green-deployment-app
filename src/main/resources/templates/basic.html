@@ -4,5 +4,5 @@
     <meta charset="UTF-8">
     <title>Hello, World!</title>
 </head>
-<h1> [[${@environment.getProperty('VERSION')}]] </h1>
+<h1 th:style="'color: '+ ${@environment.getProperty('VERSION_COLOUR')}">[[${@environment.getProperty('VERSION')}]] </h1>
 </html>
